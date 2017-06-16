@@ -7,13 +7,12 @@ RSpec.describe Userproduct, type: :model do
   end
 
   describe 'validations' do
-    it 'requires a user and product upon creation' do
+    it 'requires a user upon creation' do
     userproduct = build(:userproduct, user: nil, product: nil)
     
     expect(userproduct.valid?).to eq(false)
     expect(userproduct.errors.full_messages).to eq([
-      "User must exist", 
-      "Product must exist"
+      "User must exist"
     ])
     end
   end
