@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170616084341) do
+ActiveRecord::Schema.define(version: 20170616085116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(version: 20170616084341) do
     t.string   "user_notes"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+  end
+
+  create_table "userproducts", force: :cascade do |t|
+    t.string   "overall_reaction", default: "safe"
+    t.string   "step"
+    t.date     "opened_on"
+    t.date     "expiry_date"
+    t.integer  "product_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   create_table "users", force: :cascade do |t|
