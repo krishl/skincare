@@ -30,9 +30,9 @@ RSpec.describe User, type: :model do
   end
 
   describe 'relationships' do
-    it { should have_many(:UserIngredients) }
-    it { should have_many(:Ingredients).through(:UserIngredients) }
-    it { should have_many(:UserProducts) }
-    it { should have_many(:Ingredients).through(:UserProducts) }
+    it { should have_many(:useringredients) }
+    it { should have_many(:ingredients).through(:useringredients) }
+    it { should have_many(:userproducts) }
+    it { should have_many(:products).through(:userproducts) }
   end
 end
