@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :ingredient do
-    name "Face Wash 1"
+    name "Ingredient 1"
     product
   end
 end
