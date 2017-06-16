@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 20170616082748) do
   create_table "useringredients", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "ingredient_id"
-    t.string   "reaction"
+    t.string   "reaction",      default: "safe"
     t.string   "user_notes"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "users", force: :cascade do |t|
