@@ -1,15 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe "Api::V1::Users", type: :request do 
-
   describe "POST /users" do 
-
     describe "on success" do 
-
       before(:each) do  
         params = { 
           user: { 
-            email: 'luke@flatironschool.com', 
+            email: 'email@email.com', 
             password: 'password' 
           } 
         }
@@ -30,7 +27,7 @@ RSpec.describe "Api::V1::Users", type: :request do
 
         expect(@response.status).to eq(200)
         expect(body['user']['id']).not_to eq(nil)
-        expect(body['user']['email']).to eq('luke@flatironschool.com')
+        expect(body['user']['email']).to eq('email@email.com')
         expect(body['user']['password_digest']).to eq(nil)
         expect(body['token']).not_to eq(nil)  
       end
