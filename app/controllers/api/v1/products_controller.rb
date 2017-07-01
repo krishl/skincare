@@ -1,6 +1,6 @@
 class Api::V1::ProductsController < ApplicationController 
   def index 
-    render json: Product.all
+    render json: Product.includes(:ingredients), include: ['ingredients']
   end
 
   def create
